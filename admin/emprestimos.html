@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Empréstimos — Painel Bibliotech</title>
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/admin.css" />
+</head>
+<body>
+  <div class="admin-layout">
+    
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">Bibliotech</div>
+      <nav class="sidebar-nav">
+        <a href="acervo.html" class="sidebar-link">📚 Acervo</a>
+        <a href="usuarios.html" class="sidebar-link">👥 Usuários</a>
+        <a href="emprestimos.html" class="sidebar-link ativo">📋 Empréstimos</a>
+        <a href="doacoes.html" class="sidebar-link">🎁 Doações</a>
+        <a href="relatorios.html" class="sidebar-link">📊 Relatórios</a>
+        <a href="../index.html" class="sidebar-link" style="margin-top: auto; color: var(--cor-erro);">🚪 Sair</a>
+      </nav>
+    </aside>
+
+    <!-- CONTEÚDO -->
+    <main class="admin-conteudo">
+      
+      <!-- Cabeçalho -->
+      <header class="admin-header">
+        <div class="admin-header-titulo">
+          <h1>📋 Empréstimos</h1>
+          <p>Gerencie os empréstimos, devoluções e atrasos da biblioteca.</p>
+        </div>
+        <div class="emprestimos-header-acoes">
+          <button class="btn btn-primario btn-abrir-modal" data-modal="modal-novo-emprestimo">+ Novo empréstimo</button>
+          <button class="btn btn-secundario btn-abrir-modal" data-modal="modal-registrar-devolucao">↩️ Registrar devolução</button>
+        </div>
+      </header>
+
+      <!-- Kanban -->
+      <div class="kanban-grid">
+        
+        <!-- Coluna: ATIVOS -->
+        <section class="kanban-coluna">
+          <div class="kanban-titulo">
+            <div class="kanban-titulo-esq">
+              <span style="color: var(--cor-sucesso);">●</span> Ativos
+            </div>
+            <span class="contador">5 empréstimos</span>
+          </div>
+
+          <div class="card-kanban">
+            <div class="card-kanban-livro">O Pequeno Príncipe</div>
+            <div class="card-kanban-meta">
+              <span>Mat: 202400123</span>
+              <span class="badge badge-sucesso" style="font-size: 10px;">5 dias</span>
+            </div>
+            <div class="card-kanban-rodape">
+              <span class="card-kanban-user">Ana Clara</span>
+              <button class="btn-mini">Detalhes</button>
+            </div>
+          </div>
+
+          <div class="card-kanban">
+            <div class="card-kanban-livro">1984</div>
+            <div class="card-kanban-meta">
+              <span>Mat: 202400456</span>
+              <span class="badge badge-sucesso" style="font-size: 10px;">8 dias</span>
+            </div>
+            <div class="card-kanban-rodape">
+              <span class="card-kanban-user">Bruno Lima</span>
+              <button class="btn-mini">Detalhes</button>
+            </div>
+          </div>
+
+          <div class="card-kanban">
+            <div class="card-kanban-livro">Harry Potter e a Pedra Filosofal</div>
+            <div class="card-kanban-meta">
+              <span>Mat: 202300789</span>
+              <span class="badge badge-sucesso" style="font-size: 10px;">12 dias</span>
+            </div>
+            <div class="card-kanban-rodape">
+              <span class="card-kanban-user">Carla Mendes</span>
+              <button class="btn-mini">Detalhes</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Coluna: DEVOLVIDOS -->
+        <section class="kanban-coluna">
+          <div class="kanban-titulo">
+            <div class="kanban-titulo-esq">
+              <span style="color: var(--cor-primaria);">●</span> Devolvidos / a organizar
+            </div>
+            <span class="contador">8 empréstimos</span>
+          </div>
+
+          <div class="card-kanban">
+            <div class="card-kanban-livro">O Alquimista</div>
+            <div class="card-kanban-meta">
+              <span>Mat: 202200111</span>
+              <span class="badge badge-neutro" style="font-size: 10px;">Ontem</span>
+            </div>
+            <div class="card-kanban-rodape">
+              <span class="card-kanban-user">Diego Oliveira</span>
+              <button class="btn-mini">Arquivar</button>
+            </div>
+          </div>
+
+          <div class="card-kanban">
+            <div class="card-kanban-livro">A Culpa é das Estrelas</div>
+            <div class="card-kanban-meta">
+              <span>Mat: 202400999</span>
+              <span class="badge badge-neutro" style="font-size: 10px;">Hoje</span>
+            </div>
+            <div class="card-kanban-rodape">
+              <span class="card-kanban-user">Eduarda Costa</span>
+              <button class="btn-mini">Arquivar</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Coluna: ATRASADOS -->
+        <section class="kanban-coluna">
+          <div class="kanban-titulo">
+            <div class="kanban-titulo-esq">
+              <span style="color: var(--cor-erro);">●</span> Atrasados
+            </div>
+            <span class="contador">4 empréstimos</span>
+          </div>
+
+          <div class="card-kanban" style="border-left: 3px solid var(--cor-erro);">
+            <div class="card-kanban-livro">Fahrenheit 451</div>
+            <div class="card-kanban-meta">
+              <span>Mat: 202300123</span>
+              <span class="badge badge-erro" style="font-size: 10px;">3 dias</span>
+            </div>
+            <div class="card-kanban-rodape">
+              <span class="card-kanban-user">Felipe Ramos</span>
+              <button class="btn-mini">Notificar</button>
+            </div>
+          </div>
+
+          <div class="card-kanban" style="border-left: 3px solid var(--cor-erro);">
+            <div class="card-kanban-livro">O Nome do Vento</div>
+            <div class="card-kanban-meta">
+              <span>Mat: 202400567</span>
+              <span class="badge badge-erro" style="font-size: 10px;">5 dias</span>
+            </div>
+            <div class="card-kanban-rodape">
+              <span class="card-kanban-user">Patrícia Rocha</span>
+              <button class="btn-mini">Notificar</button>
+            </div>
+          </div>
+
+          <div class="card-kanban" style="border-left: 3px solid var(--cor-erro);">
+            <div class="card-kanban-livro">Duna</div>
+            <div class="card-kanban-meta">
+              <span>Mat: 202200345</span>
+              <span class="badge badge-erro" style="font-size: 10px;">7 dias</span>
+            </div>
+            <div class="card-kanban-rodape">
+              <span class="card-kanban-user">Paulo Souza</span>
+              <button class="btn-mini">Notificar</button>
+            </div>
+          </div>
+
+          <div class="card-kanban" style="border-left: 3px solid var(--cor-erro);">
+            <div class="card-kanban-livro">O Poder do Hábito</div>
+            <div class="card-kanban-meta">
+              <span>Mat: 202300678</span>
+              <span class="badge badge-erro" style="font-size: 10px;">10 dias</span>
+            </div>
+            <div class="card-kanban-rodape">
+              <span class="card-kanban-user">Charles Duhigg</span>
+              <button class="btn-mini">Notificar</button>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- MODAL NOVO EMPRÉSTIMO -->
+      <div class="modal-overlay" id="modal-novo-emprestimo">
+        <div class="modal-conteudo" style="max-width: 550px;">
+          <div class="modal-header">
+            <h2>📚 Novo empréstimo</h2>
+            <button class="modal-fechar" type="button">✖</button>
+          </div>
+
+          <!-- Faixa de Alerta (Igual ao protótipo) -->
+          <div style="background-color: var(--cor-erro-fundo); color: var(--cor-erro); padding: var(--esp-3); border-radius: var(--raio-md); font-size: var(--tamanho-sm); margin-bottom: var(--esp-4); display: flex; align-items: center; gap: var(--esp-2);">
+            ⚠️ Usuário com atraso não pode pegar novos livros.
+          </div>
+
+          <form class="modal-form">
+            <div class="campo">
+              <label>Matrícula do usuário</label>
+              <div style="display: flex; gap: var(--esp-2);">
+                <input type="text" placeholder="Digite a matrícula" value="202400123" style="flex: 1;" />
+                <button type="button" class="btn btn-secundario">🔍</button>
+              </div>
+            </div>
+
+            <!-- Cartão do Usuário Encontrado -->
+            <div style="background-color: var(--cor-fundo); border: 1px solid var(--cor-borda); padding: var(--esp-3); border-radius: var(--raio-md); display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <strong style="font-size: var(--tamanho-sm);">Ana Clara Santos</strong>
+                <div style="font-size: var(--tamanho-xs); color: var(--cor-texto-suave);">Mat: 202400123</div>
+              </div>
+              <!-- O status Regular, mas na vida real com pendência apareceria Suspenso e o botão Confirmar desabilitado -->
+              <span class="badge badge-sucesso">Regular</span>
+            </div>
+
+            <div class="campo">
+              <label>Livro ou exemplar</label>
+              <input type="text" placeholder="Digite o título, autor ou ISBN" />
+            </div>
+
+            <div class="campo">
+              <label>Devolução prevista</label>
+              <input type="date" value="2025-05-05" />
+            </div>
+
+            <div class="modal-acoes">
+              <button type="button" class="btn btn-secundario btn-cancelar-modal">Cancelar</button>
+              <button type="button" class="btn btn-primario">Confirmar empréstimo</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- MODAL REGISTRAR DEVOLUÇÃO -->
+      <div class="modal-overlay" id="modal-registrar-devolucao">
+        <div class="modal-conteudo" style="max-width: 550px;">
+          <div class="modal-header">
+            <h2>↩️ Registrar devolução</h2>
+            <button class="modal-fechar" type="button">✖</button>
+          </div>
+
+          <form class="modal-form">
+            <div class="campo">
+              <label>Empréstimo</label>
+              <input type="text" placeholder="Digite o nome do livro, matrícula ou código do exemplar" />
+            </div>
+
+            <!-- Cartão do Livro/Usuário Encontrado -->
+            <div style="background-color: var(--cor-fundo); border: 1px solid var(--cor-borda); padding: var(--esp-3); border-radius: var(--raio-md); display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <strong style="font-size: var(--tamanho-sm);">O Pequeno Príncipe</strong>
+                <div style="font-size: var(--tamanho-xs); color: var(--cor-texto-suave);">Antoine de Saint-Exupéry · Mat: 202400123</div>
+              </div>
+              <span class="badge badge-alerta">Em empréstimo</span>
+            </div>
+
+            <div class="campo">
+              <label>Estado do livro</label>
+              <div style="display: flex; gap: var(--esp-4); margin-top: var(--esp-2);">
+                <label style="display: flex; align-items: center; gap: var(--esp-2); cursor: pointer; font-weight: 400;">
+                  <input type="radio" name="estado_livro" value="bom" checked /> Bom
+                </label>
+                <label style="display: flex; align-items: center; gap: var(--esp-2); cursor: pointer; font-weight: 400;">
+                  <input type="radio" name="estado_livro" value="danificado" /> Danificado
+                </label>
+                <label style="display: flex; align-items: center; gap: var(--esp-2); cursor: pointer; font-weight: 400;">
+                  <input type="radio" name="estado_livro" value="perdido" /> Perdido
+                </label>
+              </div>
+            </div>
+
+            <!-- Faixa Informativa de Pontos (Verde, igual ao protótipo) -->
+            <div style="background-color: var(--cor-sucesso-fundo); color: var(--cor-sucesso); padding: var(--esp-3); border-radius: var(--raio-md); font-size: var(--tamanho-sm); display: flex; align-items: center; gap: var(--esp-2);">
+              🌟 Devolvido no prazo: +10 pontos
+            </div>
+
+            <div class="modal-acoes">
+              <button type="button" class="btn btn-secundario btn-cancelar-modal">Cancelar</button>
+              <button type="button" class="btn btn-primario">Confirmar devolução</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

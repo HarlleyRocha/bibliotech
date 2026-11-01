@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minha Conta — Bibliotech</title>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/usuario.css" />
+</head>
+<body>
+  <!-- Navbar Superior -->
+  <header class="navbar">
+    <div class="navbar-logo">Bibliotech</div>
+    <nav class="navbar-links">
+      <a href="catalogo.html">Catálogo</a>
+      <a href="conta.html" class="ativo">Minha conta</a>
+      <a href="doar.html">Doar livro</a>
+    </nav>
+  </header>
+
+  <main class="conteudo-principal">
+    <div class="conta-grid">
+      
+      <!-- Coluna da Esquerda -->
+      <section>
+        <!-- Cartão de Perfil -->
+        <div class="cartao-perfil">
+          <div class="perfil-avatar"></div>
+          <div class="perfil-info">
+            <h2>Ana Clara Santos</h2>
+            <p>Matrícula: 202400123</p>
+            <span class="badge badge-sucesso">Status: Regular</span>
+          </div>
+          
+          <div class="score-box">
+            <div class="score-titulo">Pontos de Leitura</div>
+            <div class="score-barra">
+              <div class="score-preenchimento"></div>
+            </div>
+            <div class="score-legendas">
+              <span>0</span>
+              <span>50 (prazo de 21 dias)</span>
+              <span>100 (até 4 livros)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Empréstimos Ativos -->
+        <h2 class="secao-titulo">Empréstimos ativos</h2>
+        
+        <article class="card-emprestimo">
+          <div class="emprestimo-capa"></div>
+          <div class="emprestimo-info">
+            <h3>Dom Casmurro</h3>
+            <p>Machado de Assis — Literatura Brasileira</p>
+            <div class="emprestimo-data">
+              <span>📅 Data de empréstimo: 10/04/2025</span>
+            </div>
+          </div>
+          <span class="badge badge-alerta">Vence em 5 dias</span>
+        </article>
+
+        <article class="card-emprestimo">
+          <div class="emprestimo-capa"></div>
+          <div class="emprestimo-info">
+            <h3>1984</h3>
+            <p>George Orwell — Ficção Científica</p>
+            <div class="emprestimo-data">
+              <span>📅 Data de empréstimo: 05/04/2025</span>
+            </div>
+          </div>
+          <span class="badge badge-alerta">Vence em 5 dias</span>
+        </article>
+
+        <article class="card-emprestimo">
+          <div class="emprestimo-capa"></div>
+          <div class="emprestimo-info">
+            <h3>O Pequeno Príncipe</h3>
+            <p>Antoine de Saint-Exupéry — Literatura Infantojuvenil</p>
+            <div class="emprestimo-data">
+              <span>📅 Data de empréstimo: 28/03/2025</span>
+            </div>
+          </div>
+          <span class="badge badge-erro">Atrasado 2 dias</span>
+        </article>
+      </section>
+
+      <!-- Coluna da Direita (Ações) -->
+      <aside class="acoes-laterais">
+        <a href="historico.html" class="btn-acao-lateral">
+          🕒 Ver histórico
+        </a>
+        <a href="filas.html" class="btn-acao-lateral">
+          📚 Minhas filas
+        </a>
+        <a href="#" class="btn-acao-lateral">
+          🔄 Solicitar renovação
+        </a>
+
+        <div class="caixa-aviso">
+          <span>ℹ️</span>
+          <div>
+            <strong>Compareça à biblioteca com o livro</strong><br>
+            Para renovar o empréstimo, é necessário comparecer à biblioteca com o livro em mãos.
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

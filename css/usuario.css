@@ -1,0 +1,354 @@
+/* ---------- TELA DE CATÁLOGO ---------- */
+.catalogo-filtros {
+  display: flex;
+  gap: var(--esp-4);
+  margin-bottom: var(--esp-6);
+}
+
+.catalogo-filtros .campo-busca {
+  flex: 1;
+}
+
+.catalogo-filtros .campo-categoria {
+  width: 250px;
+}
+
+/* Grid de livros */
+.grid-livros {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--esp-5);
+}
+
+/* Card do livro */
+.card-livro {
+  background-color: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-lg);
+  padding: var(--esp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-4);
+  transition: box-shadow var(--transicao);
+}
+
+.card-livro:hover {
+  box-shadow: var(--sombra-md);
+}
+
+.card-livro-capa {
+  width: 100%;
+  height: 180px;
+  background-color: #F1F5F9;
+  border-radius: var(--raio-md);
+  object-fit: cover;
+}
+
+.card-livro-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-1);
+}
+
+.card-livro-titulo {
+  font-size: var(--tamanho-md);
+  font-weight: 600;
+}
+
+.card-livro-autor {
+  font-size: var(--tamanho-sm);
+  color: var(--cor-texto-suave);
+}
+
+.card-livro-categoria {
+  font-size: var(--tamanho-xs);
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto-suave);
+  padding: 2px 8px;
+  border-radius: 4px;
+  align-self: flex-start;
+  margin-top: var(--esp-2);
+}
+
+.card-livro-disponibilidade {
+  font-size: var(--tamanho-sm);
+  color: var(--cor-texto-suave);
+  display: flex;
+  align-items: center;
+  gap: var(--esp-2);
+  margin-top: var(--esp-2);
+  margin-bottom: var(--esp-2);
+}
+
+.card-livro .btn {
+  margin-top: auto; /* Empurra o botão pro final do card */
+}
+
+/* ---------- TELA MINHA CONTA ---------- */
+.conta-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Coluna esquerda maior, direita menor */
+  gap: var(--esp-5);
+  align-items: start;
+}
+
+/* Cartão de Perfil (Topo) */
+.cartao-perfil {
+  background-color: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-lg);
+  padding: var(--esp-5);
+  display: flex;
+  align-items: center;
+  gap: var(--esp-5);
+  margin-bottom: var(--esp-5);
+}
+
+.perfil-avatar {
+  width: 80px;
+  height: 80px;
+  background-color: #E2E8F0;
+  border-radius: var(--raio-md);
+}
+
+.perfil-info h2 {
+  font-size: var(--tamanho-lg);
+  margin-bottom: var(--esp-1);
+}
+
+.perfil-info p {
+  font-size: var(--tamanho-sm);
+  color: var(--cor-texto-suave);
+  margin-bottom: var(--esp-2);
+}
+
+/* Barra de Score */
+.score-box {
+  flex: 1;
+  margin-left: var(--esp-6);
+}
+
+.score-titulo {
+  font-size: var(--tamanho-sm);
+  font-weight: 600;
+  margin-bottom: var(--esp-2);
+  color: var(--cor-texto-suave);
+}
+
+.score-barra {
+  height: 8px;
+  background-color: var(--cor-borda);
+  border-radius: 999px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: var(--esp-2);
+}
+
+.score-preenchimento {
+  height: 100%;
+  width: 85%; /* Exemplo visual: 85 pontos */
+  background-color: var(--cor-primaria);
+  border-radius: 999px;
+}
+
+.score-legendas {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--tamanho-xs);
+  color: var(--cor-texto-suave);
+}
+
+/* Empréstimos Ativos */
+.secao-titulo {
+  font-size: var(--tamanho-md);
+  font-weight: 600;
+  margin-bottom: var(--esp-4);
+}
+
+.card-emprestimo {
+  background-color: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-md);
+  padding: var(--esp-4);
+  display: flex;
+  align-items: center;
+  gap: var(--esp-4);
+  margin-bottom: var(--esp-3);
+}
+
+.emprestimo-capa {
+  width: 50px;
+  height: 70px;
+  background-color: #E2E8F0;
+  border-radius: var(--raio-sm);
+}
+
+.emprestimo-info {
+  flex: 1;
+}
+
+.emprestimo-info h3 {
+  font-size: var(--tamanho-sm);
+  margin-bottom: 2px;
+}
+
+.emprestimo-info p {
+  font-size: var(--tamanho-xs);
+  color: var(--cor-texto-suave);
+}
+
+.emprestimo-data {
+  font-size: var(--tamanho-xs);
+  color: var(--cor-texto-suave);
+  margin-top: var(--esp-2);
+  display: flex;
+  align-items: center;
+  gap: var(--esp-1);
+}
+
+/* Botões Laterais (Ações) */
+.acoes-laterais {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-3);
+  background-color: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-lg);
+  padding: var(--esp-5);
+}
+
+.btn-acao-lateral {
+  display: flex;
+  align-items: center;
+  gap: var(--esp-3);
+  padding: var(--esp-4);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-md);
+  background-color: var(--cor-superficie);
+  font-weight: 500;
+  font-size: var(--tamanho-sm);
+  transition: background-color var(--transicao);
+  text-align: left;
+}
+
+.btn-acao-lateral:hover {
+  background-color: var(--cor-fundo);
+}
+
+.caixa-aviso {
+  background-color: #F1F5F9;
+  border-radius: var(--raio-md);
+  padding: var(--esp-4);
+  font-size: var(--tamanho-xs);
+  color: var(--cor-texto-suave);
+  display: flex;
+  gap: var(--esp-3);
+  margin-top: var(--esp-4);
+}
+
+/* Responsividade da Tela de Conta */
+@media (max-width: 900px) {
+  .conta-grid {
+    grid-template-columns: 1fr; /* Vira uma coluna só em telas menores */
+  }
+  .cartao-perfil {
+    flex-direction: column;
+    text-align: center;
+  }
+  .score-box {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+/* ---------- ESTILOS GERAIS DE TABELAS DO USUÁRIO ---------- */
+.livro-tabela {
+  display: flex;
+  align-items: center;
+  gap: var(--esp-3);
+}
+
+.livro-tabela-capa {
+  width: 40px;
+  height: 55px;
+  background-color: #E2E8F0;
+  border-radius: var(--raio-sm);
+  flex-shrink: 0;
+}
+
+.livro-tabela-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.livro-tabela-info strong {
+  font-weight: 500;
+  color: var(--cor-texto);
+}
+
+.livro-tabela-info span {
+  font-size: var(--tamanho-xs);
+  color: var(--cor-texto-suave);
+}
+
+/* ---------- TELA DE DOAR LIVRO ---------- */
+.doar-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--esp-5);
+  margin-bottom: var(--esp-6);
+}
+
+.cartao-formulario {
+  background-color: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-lg);
+  padding: var(--esp-5);
+}
+
+.cartao-formulario h2 {
+  font-size: var(--tamanho-lg);
+  margin-bottom: var(--esp-5);
+  display: flex;
+  align-items: center;
+  gap: var(--esp-2);
+}
+
+.form-doacao {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-4);
+}
+
+/* Área de upload de foto */
+.upload-foto {
+  border: 2px dashed var(--cor-borda);
+  border-radius: var(--raio-md);
+  padding: var(--esp-6);
+  text-align: center;
+  color: var(--cor-texto-suave);
+  cursor: pointer;
+  transition: border-color var(--transicao), background-color var(--transicao);
+}
+
+.upload-foto:hover {
+  border-color: var(--cor-primaria);
+  background-color: var(--cor-primaria-clara);
+}
+
+.upload-foto span {
+  font-size: var(--tamanho-2xl);
+  display: block;
+  margin-bottom: var(--esp-2);
+}
+
+.upload-foto p {
+  font-size: var(--tamanho-sm);
+}
+
+/* Responsividade da tela de doação */
+@media (max-width: 800px) {
+  .doar-grid {
+    grid-template-columns: 1fr;
+  }
+}

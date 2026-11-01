@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doações — Painel Bibliotech</title>
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/admin.css" />
+</head>
+<body>
+  <div class="admin-layout">
+    
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">Bibliotech</div>
+      <nav class="sidebar-nav">
+        <a href="acervo.html" class="sidebar-link">📚 Acervo</a>
+        <a href="usuarios.html" class="sidebar-link">👥 Usuários</a>
+        <a href="emprestimos.html" class="sidebar-link">📋 Empréstimos</a>
+        <a href="doacoes.html" class="sidebar-link ativo">🎁 Doações</a>
+        <a href="relatorios.html" class="sidebar-link">📊 Relatórios</a>
+        <a href="../index.html" class="sidebar-link" style="margin-top: auto; color: var(--cor-erro);">🚪 Sair</a>
+      </nav>
+    </aside>
+
+    <!-- CONTEÚDO -->
+    <main class="admin-conteudo">
+      
+      <!-- Cabeçalho -->
+      <header class="admin-header">
+        <div class="admin-header-titulo">
+          <h1>🎁 Doações</h1>
+          <p>Livros doados pela comunidade.</p>
+        </div>
+        <div class="campo" style="width: 300px;">
+          <input type="text" placeholder="Buscar por título, autor ou doador" />
+        </div>
+      </header>
+
+      <!-- Sistema de Abas -->
+      <div class="tabs-container">
+        <!-- Inputs de Rádio (Escondidos) -->
+        <input type="radio" name="abas-doacoes" id="aba-pendentes" checked />
+        <input type="radio" name="abas-doacoes" id="aba-aprovadas" />
+        <input type="radio" name="abas-doacoes" id="aba-recusadas" />
+
+        <!-- Botões Visuais das Abas (SEM a classe .ativa fixa) -->
+        <div class="abas-filtro">
+          <label for="aba-pendentes" class="aba-btn">
+            Pendentes <span class="contador">3</span>
+          </label>
+          <label for="aba-aprovadas" class="aba-btn">
+            Aprovadas <span class="contador">3</span>
+          </label>
+          <label for="aba-recusadas" class="aba-btn">
+            Recusadas <span class="contador">1</span>
+          </label>
+        </div>
+
+        <!-- CONTEÚDO DA ABA PENDENTES -->
+        <div class="conteudo-aba aba-pendentes">
+          <div class="grid-doacoes">
+            <article class="card-doacao">
+              <div class="card-doacao-topo">
+                <div class="card-doacao-livro">
+                  <div class="card-doacao-capa"></div>
+                  <div class="card-doacao-info">
+                    <h3>O Hobbit</h3>
+                    <p>J.R.R. Tolkien</p>
+                  </div>
+                </div>
+                <span class="badge badge-alerta">Pendente</span>
+              </div>
+              <div class="card-doacao-detalhes">
+                <span>👤 Doador: Ana Clara Santos</span>
+                <span>📦 Estado do livro: Bom</span>
+              </div>
+              <div class="card-doacao-acoes">
+                <button class="btn btn-primario" style="flex: 1; font-size: var(--tamanho-xs);">Incluir no acervo</button>
+                <button class="btn btn-secundario" style="flex: 1; font-size: var(--tamanho-xs);">Recusar</button>
+              </div>
+            </article>
+
+            <article class="card-doacao">
+              <div class="card-doacao-topo">
+                <div class="card-doacao-livro">
+                  <div class="card-doacao-capa"></div>
+                  <div class="card-doacao-info">
+                    <h3>1984</h3>
+                    <p>George Orwell</p>
+                  </div>
+                </div>
+                <span class="badge badge-alerta">Pendente</span>
+              </div>
+              <div class="card-doacao-detalhes">
+                <span>👤 Doador: Bruno Lima</span>
+                <span>📦 Estado do livro: Bom</span>
+              </div>
+              <div class="card-doacao-acoes">
+                <button class="btn btn-primario" style="flex: 1; font-size: var(--tamanho-xs);">Incluir no acervo</button>
+                <button class="btn btn-secundario" style="flex: 1; font-size: var(--tamanho-xs);">Recusar</button>
+              </div>
+            </article>
+
+            <article class="card-doacao">
+              <div class="card-doacao-topo">
+                <div class="card-doacao-livro">
+                  <div class="card-doacao-capa"></div>
+                  <div class="card-doacao-info">
+                    <h3>A Culpa é das Estrelas</h3>
+                    <p>John Green</p>
+                  </div>
+                </div>
+                <span class="badge badge-alerta">Pendente</span>
+              </div>
+              <div class="card-doacao-detalhes">
+                <span>👤 Doador: Carla Mendes</span>
+                <span>📦 Estado do livro: Bom</span>
+              </div>
+              <div class="card-doacao-acoes">
+                <button class="btn btn-primario" style="flex: 1; font-size: var(--tamanho-xs);">Incluir no acervo</button>
+                <button class="btn btn-secundario" style="flex: 1; font-size: var(--tamanho-xs);">Recusar</button>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- CONTEÚDO DA ABA APROVADAS -->
+        <div class="conteudo-aba aba-aprovadas">
+          <div class="grid-doacoes">
+            <article class="card-doacao">
+              <div class="card-doacao-topo">
+                <div class="card-doacao-livro">
+                  <div class="card-doacao-capa"></div>
+                  <div class="card-doacao-info">
+                    <h3>Harry Potter e a Pedra Filosofal</h3>
+                    <p>J.K. Rowling</p>
+                  </div>
+                </div>
+                <span class="badge badge-sucesso">Aprovada</span>
+              </div>
+              <div class="card-doacao-detalhes">
+                <span>👤 Doador: Diego Oliveira</span>
+                <span>📦 Estado do livro: Bom</span>
+              </div>
+            </article>
+
+            <article class="card-doacao">
+              <div class="card-doacao-topo">
+                <div class="card-doacao-livro">
+                  <div class="card-doacao-capa"></div>
+                  <div class="card-doacao-info">
+                    <h3>O Pequeno Príncipe</h3>
+                    <p>Antoine de Saint-Exupéry</p>
+                  </div>
+                </div>
+                <span class="badge badge-sucesso">Aprovada</span>
+              </div>
+              <div class="card-doacao-detalhes">
+                <span>👤 Doador: Eduarda Costa</span>
+                <span>📦 Estado do livro: Bom</span>
+              </div>
+            </article>
+
+            <article class="card-doacao">
+              <div class="card-doacao-topo">
+                <div class="card-doacao-livro">
+                  <div class="card-doacao-capa"></div>
+                  <div class="card-doacao-info">
+                    <h3>Dom Casmurro</h3>
+                    <p>Machado de Assis</p>
+                  </div>
+                </div>
+                <span class="badge badge-sucesso">Aprovada</span>
+              </div>
+              <div class="card-doacao-detalhes">
+                <span>👤 Doador: Felipe Ramos</span>
+                <span>📦 Estado do livro: Regular</span>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- CONTEÚDO DA ABA RECUSADAS -->
+        <div class="conteudo-aba aba-recusadas">
+          <div class="grid-doacoes">
+            <article class="card-doacao">
+              <div class="card-doacao-topo">
+                <div class="card-doacao-livro">
+                  <div class="card-doacao-capa"></div>
+                  <div class="card-doacao-info">
+                    <h3>Livro Danificado</h3>
+                    <p>Autor Desconhecido</p>
+                  </div>
+                </div>
+                <span class="badge badge-erro">Recusada</span>
+              </div>
+              <div class="card-doacao-detalhes">
+                <span>👤 Doador: Usuário Suspenso</span>
+                <span>📦 Estado do livro: Péssimo</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

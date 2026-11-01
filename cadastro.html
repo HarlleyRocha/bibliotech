@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro — Bibliotech</title>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+</head>
+<body>
+  <main class="auth-tela">
+    <section class="auth-cartao">
+      <h1 class="auth-logo">Bibliotech</h1>
+
+      <!-- Seletor de perfil (padrão do protótipo) -->
+      <div class="seletor-perfil" role="tablist" aria-label="Tipo de usuário">
+        <button class="perfil-opcao ativo" type="button" role="tab" aria-selected="true">Aluno</button>
+        <button class="perfil-opcao" type="button" role="tab" aria-selected="false">Servidor</button>
+        <button class="perfil-opcao" type="button" role="tab" aria-selected="false">Professor</button>
+      </div>
+
+      <!-- Formulário de cadastro -->
+      <form class="auth-form" action="catalogo.html" method="get">
+        <div class="campo">
+          <label for="nome">Nome</label>
+          <input id="nome" name="nome" type="text" placeholder="Digite seu nome" required />
+        </div>
+
+        <div class="campo">
+          <label for="matricula">Matrícula</label>
+          <input id="matricula" name="matricula" type="text" placeholder="Digite sua matrícula" required />
+        </div>
+
+        <div class="campo">
+          <label for="email">E-mail institucional</label>
+          <input id="email" name="email" type="email" placeholder="Digite seu e-mail institucional" required />
+        </div>
+
+        <div class="campo">
+          <label for="senha">Senha de acesso</label>
+          <input id="senha" name="senha" type="password" placeholder="Digite sua senha" required />
+        </div>
+
+        <a href="catalogo.html" class="btn btn-primario btn-bloco">Criar conta</a>
+      </form>
+
+      <p class="auth-rodape">
+        <a href="index.html">Já tenho conta</a>
+      </p>
+    </section>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

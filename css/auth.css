@@ -1,0 +1,79 @@
+.auth-tela {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--esp-4);
+  background-color: var(--cor-fundo);
+}
+
+.auth-cartao {
+  width: 100%;
+  max-width: 440px;
+  background-color: var(--cor-superficie);
+  border-radius: var(--raio-lg);
+  padding: var(--esp-8) var(--esp-6);
+  box-shadow: var(--sombra-md);
+}
+
+.auth-logo {
+  text-align: center;
+  font-size: var(--tamanho-2xl);
+  font-weight: 700;
+  color: var(--cor-texto);
+  margin-bottom: var(--esp-6);
+}
+
+/* Seletor de perfil: Aluno / Servidor / Professor */
+.seletor-perfil {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--esp-3);
+  margin-bottom: var(--esp-5);
+}
+
+.perfil-opcao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--esp-2);
+  padding: var(--esp-3) var(--esp-2);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-md);
+  font-size: var(--tamanho-sm);
+  font-weight: 500;
+  color: var(--cor-texto-suave);
+  background-color: var(--cor-superficie);
+  transition: all var(--transicao);
+}
+
+.perfil-opcao:hover {
+  border-color: var(--cor-primaria);
+}
+
+.perfil-opcao.ativo {
+  border-color: var(--cor-primaria);
+  background-color: var(--cor-primaria-clara);
+  color: var(--cor-primaria-escura);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-4);
+}
+
+.auth-rodape {
+  text-align: center;
+  margin-top: var(--esp-5);
+  font-size: var(--tamanho-sm);
+  color: var(--cor-texto-suave);
+}
+
+.auth-rodape a {
+  color: var(--cor-primaria);
+  font-weight: 600;
+}
+.auth-rodape a:hover {
+  text-decoration: underline;
+}

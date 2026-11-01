@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Usuários — Painel Bibliotech</title>
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/admin.css" />
+</head>
+<body>
+  <div class="admin-layout">
+    
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">Bibliotech</div>
+      <nav class="sidebar-nav">
+        <a href="acervo.html" class="sidebar-link">📚 Acervo</a>
+        <a href="usuarios.html" class="sidebar-link ativo">👥 Usuários</a>
+        <a href="emprestimos.html" class="sidebar-link">📋 Empréstimos</a>
+        <a href="doacoes.html" class="sidebar-link">🎁 Doações</a>
+        <a href="relatorios.html" class="sidebar-link">📊 Relatórios</a>
+        <a href="../index.html" class="sidebar-link" style="margin-top: auto; color: var(--cor-erro);">🚪 Sair</a>
+      </nav>
+    </aside>
+
+    <!-- CONTEÚDO -->
+    <main class="admin-conteudo">
+      
+      <!-- Cabeçalho -->
+      <header class="admin-header">
+        <div class="admin-header-titulo">
+          <h1>👥 Usuários</h1>
+          <p>Gerencie os usuários da biblioteca.</p>
+        </div>
+        <div class="admin-perfil">
+          👤 Bibliotecário
+        </div>
+      </header>
+
+      <!-- Cards de Métricas de Usuário -->
+      <section class="metricas-grid" style="grid-template-columns: repeat(5, 1fr);">
+        <div class="card-metrica-usuario">
+          <span class="icone">👥</span>
+          <div class="info">
+            <span class="valor">428</span>
+            <span class="label">Usuários</span>
+          </div>
+        </div>
+        <div class="card-metrica-usuario">
+          <span class="icone">🎓</span>
+          <div class="info">
+            <span class="valor">352</span>
+            <span class="label">Alunos</span>
+          </div>
+        </div>
+        <div class="card-metrica-usuario">
+          <span class="icone">👨‍🏫</span>
+          <div class="info">
+            <span class="valor">48</span>
+            <span class="label">Professores</span>
+          </div>
+        </div>
+        <div class="card-metrica-usuario">
+          <span class="icone">💼</span>
+          <div class="info">
+            <span class="valor">28</span>
+            <span class="label">Servidores</span>
+          </div>
+        </div>
+        <div class="card-metrica-usuario">
+          <span class="icone">🚫</span>
+          <div class="info">
+            <span class="valor">12</span>
+            <span class="label">Suspensas</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Layout Principal: Tabela à Esquerda, Detalhes à Direita -->
+      <div style="display: flex; gap: var(--esp-5); align-items: flex-start;">
+        
+        <!-- Coluna da Tabela -->
+        <section style="flex: 1;">
+          <div class="acervo-filtros">
+            <div class="campo campo-busca">
+              <input type="text" placeholder="Buscar por nome, matrícula ou e-mail" />
+            </div>
+            <div class="campo" style="width: 150px;">
+              <select>
+                <option>Perfil</option>
+              </select>
+            </div>
+            <div class="campo" style="width: 150px;">
+              <select>
+                <option>Situação</option>
+              </select>
+            </div>
+            <button class="btn btn-primario">+ Adicionar usuário</button>
+          </div>
+
+          <div class="tabela-container" style="margin-top: var(--esp-4);">
+            <table class="tabela">
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>Matrícula</th>
+                  <th>Perfil</th>
+                  <th>Situação</th>
+                  <th>Ativos</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="background-color: #F8FAFC;"> <!-- Linha selecionada -->
+                  <td>
+                    <div class="livro-tabela">
+                      <div class="avatar-grande" style="width: 32px; height: 32px;"></div>
+                      <div class="livro-tabela-info">
+                        <strong>Ana Clara Santos</strong>
+                        <span>ana.santos@escola.edu.br</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>202400123</td>
+                  <td>Aluno</td>
+                  <td><span class="badge badge-sucesso">Ativo</span></td>
+                  <td>2</td>
+                  <td>
+                    <button class="btn btn-secundario" style="padding: var(--esp-1) var(--esp-2); font-size: var(--tamanho-xs);">🕒 Histórico</button>
+                    <button class="btn btn-secundario" style="padding: var(--esp-1) var(--esp-2); font-size: var(--tamanho-xs);">✏️ Editar</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="livro-tabela">
+                      <div class="avatar-grande" style="width: 32px; height: 32px;"></div>
+                      <div class="livro-tabela-info">
+                        <strong>Bruno Lima</strong>
+                        <span>bruno.lima@escola.edu.br</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>202300456</td>
+                  <td>Aluno</td>
+                  <td><span class="badge badge-sucesso">Ativo</span></td>
+                  <td>0</td>
+                  <td>
+                    <button class="btn btn-secundario" style="padding: var(--esp-1) var(--esp-2); font-size: var(--tamanho-xs);">🕒 Histórico</button>
+                    <button class="btn btn-secundario" style="padding: var(--esp-1) var(--esp-2); font-size: var(--tamanho-xs);">✏️ Editar</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="livro-tabela">
+                      <div class="avatar-grande" style="width: 32px; height: 32px;"></div>
+                      <div class="livro-tabela-info">
+                        <strong>Carla Mendes</strong>
+                        <span>carla.mendes@escola.edu.br</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>202200789</td>
+                  <td>Professor</td>
+                  <td><span class="badge badge-sucesso">Ativo</span></td>
+                  <td>1</td>
+                  <td>
+                    <button class="btn btn-secundario" style="padding: var(--esp-1) var(--esp-2); font-size: var(--tamanho-xs);">🕒 Histórico</button>
+                    <button class="btn btn-secundario" style="padding: var(--esp-1) var(--esp-2); font-size: var(--tamanho-xs);">✏️ Editar</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="livro-tabela">
+                      <div class="avatar-grande" style="width: 32px; height: 32px;"></div>
+                      <div class="livro-tabela-info">
+                        <strong>Diego Oliveira</strong>
+                        <span>diego.oliveira@escola.edu.br</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>202401321</td>
+                  <td>Aluno</td>
+                  <td><span class="badge badge-erro">Suspenso</span></td>
+                  <td>0</td>
+                  <td>
+                    <button class="btn btn-secundario" style="padding: var(--esp-1) var(--esp-2); font-size: var(--tamanho-xs);">🕒 Histórico</button>
+                    <button class="btn btn-secundario" style="padding: var(--esp-1) var(--esp-2); font-size: var(--tamanho-xs);">✏️ Editar</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Painel de Detalhes do Usuário (Lateral) -->
+        <aside class="painel-detalhes">
+          <div class="painel-detalhes-header">
+            <div class="avatar-grande"></div>
+            <div>
+              <h2>Ana Clara Santos</h2>
+              <p>Matrícula: 202400123</p>
+            </div>
+          </div>
+
+          <div class="painel-info-linha">
+            <span class="label">📧 E-mail</span>
+            <span class="valor" style="font-size: var(--tamanho-xs); color: var(--cor-texto-suave);">ana.santos@escola.edu.br</span>
+          </div>
+          
+          <div class="painel-info-linha">
+            <span class="label">Perfil</span>
+            <span class="badge badge-neutro">Aluno</span>
+          </div>
+
+          <div class="score-box-admin">
+            <div class="topo">
+              <span>⭐ Score</span>
+              <span>85 / 100</span>
+            </div>
+            <div class="score-barra-admin">
+              <div class="score-preenchimento-admin"></div>
+            </div>
+          </div>
+
+          <div class="painel-info-linha">
+            <span class="label">📚 Empréstimos em aberto</span>
+            <span class="valor">2</span>
+          </div>
+
+          <div class="lista-mini-emprestimos">
+            <p style="font-size: var(--tamanho-xs); font-weight: 600; margin-bottom: var(--esp-2); color: var(--cor-texto-suave);">Últimos empréstimos</p>
+            <div class="mini-emprestimo">
+              <span>O Pequeno Príncipe</span>
+              <span class="badge badge-alerta" style="font-size: 10px;">Vence em 5 dias</span>
+            </div>
+            <div class="mini-emprestimo">
+              <span>1984</span>
+              <span class="badge badge-alerta" style="font-size: 10px;">Vence em 10 dias</span>
+            </div>
+          </div>
+
+          <div class="botoes-painel">
+            <button class="btn btn-secundario" style="flex: 1; font-size: var(--tamanho-xs);">🕒 Ver histórico</button>
+            <button class="btn btn-primario btn-abrir-modal" style="flex: 1; font-size: var(--tamanho-xs);">✏️ Editar usuário</button>
+          </div>
+        </aside>
+
+      </div>
+              <!-- MODAL DE EDITAR USUÁRIO -->
+        <div class="modal-overlay">
+          <div class="modal-conteudo">
+            <div class="modal-header">
+              <h2>✏️ Editar usuário</h2>
+              <button class="modal-fechar" type="button">✖</button>
+            </div>
+
+            <form class="modal-form">
+              <div class="campo">
+                <label>Nome</label>
+                <input type="text" value="Ana Clara Santos" />
+              </div>
+
+              <div class="campo">
+                <label>E-mail</label>
+                <input type="email" value="ana.santos@escola.edu.br" />
+              </div>
+
+              <div class="campo">
+                <label>Situação</label>
+                <select>
+                  <option value="regular">Regular</option>
+                  <option value="suspensa">Suspensa</option>
+                </select>
+              </div>
+
+              <div class="campo">
+                <label>Dias de suspensão</label>
+                <input type="number" placeholder="0" />
+              </div>
+
+              <div class="modal-acoes">
+                <button type="button" class="btn btn-secundario btn-cancelar-modal">Cancelar</button>
+                <button type="button" class="btn btn-primario">Salvar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+    </main>
+  </div>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

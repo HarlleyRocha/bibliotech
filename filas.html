@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minhas Filas — Bibliotech</title>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/usuario.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="navbar-logo">Bibliotech</div>
+    <nav class="navbar-links">
+      <a href="catalogo.html">Catálogo</a>
+      <a href="conta.html" class="ativo">Minha conta</a>
+      <a href="doar.html">Doar livro</a>
+    </nav>
+  </header>
+
+  <main class="conteudo-principal">
+        <a href="conta.html" class="btn-voltar">
+      ← Voltar para Minha Conta
+    </a>
+    <h1 class="secao-titulo">👥 Minhas filas</h1>
+    <p style="color: var(--cor-texto-suave); margin-bottom: var(--esp-5);">Acompanhe sua posição na fila de espera dos livros.</p>
+
+    <div class="tabela-container">
+      <table class="tabela">
+        <thead>
+          <tr>
+            <th>Livro</th>
+            <th>Posição na fila</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="livro-tabela">
+                <div class="livro-tabela-capa"></div>
+                <div class="livro-tabela-info">
+                  <strong>O Alquimista</strong>
+                  <span>Paulo Coelho</span>
+                  <span class="card-livro-categoria">Autoajuda</span>
+                </div>
+              </div>
+            </td>
+            <td>1º</td>
+            <td><button class="btn btn-secundario">Sair da fila</button></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="livro-tabela">
+                <div class="livro-tabela-capa"></div>
+                <div class="livro-tabela-info">
+                  <strong>A Revolução dos Bichos</strong>
+                  <span>George Orwell</span>
+                  <span class="card-livro-categoria">Ficção</span>
+                </div>
+              </div>
+            </td>
+            <td>2º</td>
+            <td><button class="btn btn-secundario">Sair da fila</button></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="livro-tabela">
+                <div class="livro-tabela-capa"></div>
+                <div class="livro-tabela-info">
+                  <strong>Harry Potter e a Pedra Filosofal</strong>
+                  <span>J.K. Rowling</span>
+                  <span class="card-livro-categoria">Fantasia</span>
+                </div>
+              </div>
+            </td>
+            <td>3º</td>
+            <td><button class="btn btn-secundario">Sair da fila</button></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="livro-tabela">
+                <div class="livro-tabela-capa"></div>
+                <div class="livro-tabela-info">
+                  <strong>1984</strong>
+                  <span>George Orwell</span>
+                  <span class="card-livro-categoria">Ficção Científica</span>
+                </div>
+              </div>
+            </td>
+            <td>4º</td>
+            <td><button class="btn btn-secundario">Sair da fila</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

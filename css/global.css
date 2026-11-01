@@ -1,0 +1,201 @@
+/* Importa a fonte Inter do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: var(--fonte-principal);
+  font-size: var(--tamanho-md);
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+}
+
+/* ---------- BOTÕES ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--esp-2);
+  padding: var(--esp-3) var(--esp-5);
+  border-radius: var(--raio-md);
+  font-weight: 600;
+  font-size: var(--tamanho-sm);
+  transition: background-color var(--transicao), border-color var(--transicao), color var(--transicao);
+  border: 1px solid transparent;
+}
+
+.btn-primario {
+  background-color: var(--cor-primaria);
+  color: #fff;
+}
+.btn-primario:hover {
+  background-color: var(--cor-primaria-escura);
+}
+.btn-primario:disabled {
+  background-color: #94A3B8;
+  cursor: not-allowed;
+}
+
+.btn-secundario {
+  background-color: var(--cor-superficie);
+  color: var(--cor-texto);
+  border-color: var(--cor-borda);
+}
+.btn-secundario:hover {
+  background-color: #F1F5F9;
+}
+
+.btn-bloco {
+  width: 100%;
+}
+
+/* ---------- INPUTS ---------- */
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-1);
+}
+
+.campo label {
+  font-size: var(--tamanho-sm);
+  font-weight: 500;
+  color: var(--cor-texto);
+}
+
+.campo input,
+.campo select {
+  width: 100%;
+  padding: var(--esp-3) var(--esp-4);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-md);
+  background-color: var(--cor-superficie);
+  font-size: var(--tamanho-sm);
+  transition: border-color var(--transicao), box-shadow var(--transicao);
+}
+
+.campo input::placeholder {
+  color: #94A3B8;
+}
+
+.campo input:focus,
+.campo select:focus {
+  outline: none;
+  border-color: var(--cor-primaria);
+  box-shadow: 0 0 0 3px var(--cor-primaria-clara);
+}
+
+/* ---------- BADGES (status) ---------- */
+.badge {
+  display: inline-block;
+  padding: var(--esp-1) var(--esp-3);
+  border-radius: 999px;
+  font-size: var(--tamanho-xs);
+  font-weight: 600;
+}
+.badge-sucesso { background-color: var(--cor-sucesso-fundo); color: var(--cor-sucesso); }
+.badge-alerta  { background-color: var(--cor-alerta-fundo);  color: var(--cor-alerta); }
+.badge-erro    { background-color: var(--cor-erro-fundo);    color: var(--cor-erro); }
+.badge-neutro  { background-color: #F1F5F9; color: var(--cor-texto-suave); }
+
+/* ---------- NAVBAR DO USUÁRIO ---------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--cor-superficie);
+  padding: var(--esp-4) var(--esp-6);
+  border-bottom: 1px solid var(--cor-borda);
+  box-shadow: var(--sombra-sm);
+}
+
+.navbar-logo {
+  font-size: var(--tamanho-xl);
+  font-weight: 700;
+  color: var(--cor-texto);
+}
+
+.navbar-links {
+  display: flex;
+  gap: var(--esp-2);
+}
+
+.navbar-links a {
+  padding: var(--esp-2) var(--esp-4);
+  border-radius: var(--raio-md);
+  font-size: var(--tamanho-sm);
+  font-weight: 500;
+  color: var(--cor-texto-suave);
+  transition: all var(--transicao);
+}
+
+.navbar-links a:hover {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+
+.navbar-links a.ativo {
+  background-color: var(--cor-primaria-clara);
+  color: var(--cor-primaria-escura);
+  font-weight: 600;
+}
+
+/* Layout principal que fica abaixo da navbar */
+.conteudo-principal {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--esp-6) var(--esp-4);
+}
+
+/* ---------- TABELAS ---------- */
+.tabela-container {
+  background-color: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-lg);
+  overflow: hidden; /* Para as bordas arredondadas funcionarem */
+  box-shadow: var(--sombra-sm);
+}
+
+.tabela {
+  width: 100%;
+  text-align: left;
+}
+
+.tabela th {
+  background-color: #F8FAFC;
+  padding: var(--esp-4);
+  font-size: var(--tamanho-xs);
+  font-weight: 600;
+  color: var(--cor-texto-suave);
+  border-bottom: 1px solid var(--cor-borda);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tabela td {
+  padding: var(--esp-4);
+  border-bottom: 1px solid var(--cor-borda);
+  font-size: var(--tamanho-sm);
+  vertical-align: middle;
+}
+
+.tabela tr:last-child td {
+  border-bottom: none;
+}
+
+.tabela tr:hover td {
+  background-color: #F8FAFC;
+}
+
+/* ---------- BOTÃO VOLTAR ---------- */
+.btn-voltar {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--esp-2);
+  font-size: var(--tamanho-sm);
+  font-weight: 500;
+  color: var(--cor-texto-suave);
+  margin-bottom: var(--esp-4);
+  transition: color var(--transicao);
+}
+
+.btn-voltar:hover {
+  color: var(--cor-primaria);
+}

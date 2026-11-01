@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doar Livro — Bibliotech</title>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/usuario.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="navbar-logo">Bibliotech</div>
+    <nav class="navbar-links">
+      <a href="catalogo.html">Catálogo</a>
+      <a href="conta.html">Minha conta</a>
+      <a href="doar.html" class="ativo">Doar livro</a>
+    </nav>
+  </header>
+
+  <main class="conteudo-principal">
+    
+    <div class="doar-grid">
+      <!-- Formulário de Doação -->
+      <section class="cartao-formulario">
+        <h2>📖 Doar livro</h2>
+        
+        <form class="form-doacao" action="#" method="get">
+          <div class="campo">
+            <label for="titulo">Título do livro</label>
+            <input id="titulo" type="text" placeholder="Digite o título" required />
+          </div>
+
+          <div class="campo">
+            <label for="autor">Autor</label>
+            <input id="autor" type="text" placeholder="Digite o nome do autor" required />
+          </div>
+
+          <div class="campo">
+            <label for="estado">Estado de conservação</label>
+            <select id="estado" required>
+              <option value="">Selecione...</option>
+              <option value="otimo">Ótimo</option>
+              <option value="bom">Bom</option>
+              <option value="regular">Regular</option>
+              <option value="ruim">Ruim</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label>Foto do livro</label>
+            <div class="upload-foto">
+              <span>📷</span>
+              <p>Clique para enviar ou arraste uma foto</p>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primario btn-bloco">Enviar doação</button>
+        </form>
+      </section>
+
+      <!-- Histórico de Doações -->
+      <section>
+        <h2 class="secao-titulo" style="margin-bottom: var(--esp-4);">Minhas doações</h2>
+        
+        <div class="tabela-container">
+          <table class="tabela">
+            <thead>
+              <tr>
+                <th>Livro</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="livro-tabela-info">
+                    <strong>O Hobbit</strong>
+                    <span>J.R.R. Tolkien</span>
+                  </div>
+                </td>
+                <td><span class="badge badge-alerta">Pendente</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="livro-tabela-info">
+                    <strong>A Culpa é das Estrelas</strong>
+                    <span>John Green</span>
+                  </div>
+                </td>
+                <td><span class="badge badge-sucesso">Aprovada</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="livro-tabela-info">
+                    <strong>O Poder do Hábito</strong>
+                    <span>Charles Duhigg</span>
+                  </div>
+                </td>
+                <td><span class="badge badge-erro">Recusada</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

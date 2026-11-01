@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acervo — Painel Bibliotech</title>
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/admin.css" />
+</head>
+<body>
+  <div class="admin-layout">
+    
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">Bibliotech</div>
+      <nav class="sidebar-nav">
+        <a href="acervo.html" class="sidebar-link ativo">📚 Acervo</a>
+        <a href="usuarios.html" class="sidebar-link">👥 Usuários</a>
+        <a href="emprestimos.html" class="sidebar-link">📋 Empréstimos</a>
+        <a href="doacoes.html" class="sidebar-link">🎁 Doações</a>
+        <a href="relatorios.html" class="sidebar-link">📊 Relatórios</a>
+        <a href="../index.html" class="sidebar-link" style="margin-top: auto; color: var(--cor-erro);">🚪 Sair</a>
+      </nav>
+    </aside>
+
+    <!-- CONTEÚDO -->
+    <main class="admin-conteudo">
+      
+      <!-- Cabeçalho -->
+      <header class="admin-header">
+        <div class="admin-header-titulo">
+          <h1>📚 Acervo</h1>
+          <p>Gerencie o acervo da biblioteca.</p>
+        </div>
+        <div class="admin-perfil">
+          👤 Bibliotecário
+        </div>
+      </header>
+
+      <!-- Cards de Métricas -->
+      <section class="metricas-grid">
+        <div class="card-metrica">
+          <div class="card-metrica-titulo">📚 Títulos</div>
+          <div class="card-metrica-valor">128</div>
+        </div>
+        <div class="card-metrica">
+          <div class="card-metrica-titulo">📦 Exemplares</div>
+          <div class="card-metrica-valor">312</div>
+        </div>
+        <div class="card-metrica">
+          <div class="card-metrica-titulo">✅ Disponíveis</div>
+          <div class="card-metrica-valor">245</div>
+        </div>
+        <div class="card-metrica">
+          <div class="card-metrica-titulo">📤 Emprestados</div>
+          <div class="card-metrica-valor">56</div>
+        </div>
+        <div class="card-metrica">
+          <div class="card-metrica-titulo">⏳ Com fila</div>
+          <div class="card-metrica-valor">11</div>
+        </div>
+      </section>
+
+      <!-- Layout Principal do Acervo: Tabela à Esquerda, Formulário à Direita -->
+      <div style="display: flex; gap: var(--esp-5); align-items: flex-start;">
+        
+        <!-- Coluna da Tabela -->
+        <section style="flex: 1;">
+          <div class="acervo-filtros">
+            <div class="campo campo-busca">
+              <input type="text" placeholder="Buscar por título, autor ou ISBN" />
+            </div>
+            <div class="campo" style="width: 200px;">
+              <select>
+                <option>Categoria</option>
+              </select>
+            </div>
+            <button class="btn btn-primario">Adicionar +</button>
+          </div>
+
+          <div class="tabela-container" style="margin-top: var(--esp-4);">
+            <table class="tabela">
+              <thead>
+                <tr>
+                  <th>Livro</th>
+                  <th>Categoria</th>
+                  <th>Total</th>
+                  <th>Situação</th>
+                  <th>Editar</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="livro-tabela">
+                      <div class="livro-tabela-capa"></div>
+                      <div class="livro-tabela-info">
+                        <strong>Dom Casmurro</strong>
+                        <span>Machado de Assis</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Literatura Brasileira</td>
+                  <td>4</td>
+                  <td><span class="badge badge-sucesso">Disponível</span></td>
+                  <td><button class="btn btn-secundario" style="padding: var(--esp-1) var(--esp-3);">✏️</button></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="livro-tabela">
+                      <div class="livro-tabela-capa"></div>
+                      <div class="livro-tabela-info">
+                        <strong>1984</strong>
+                        <span>George Orwell</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Ficção Científica</td>
+                  <td>4</td>
+                  <td><span class="badge badge-sucesso">Disponível</span></td>
+                  <td><button class="btn btn-secundario" style="padding: var(--esp-1) var(--esp-3);">✏️</button></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="livro-tabela">
+                      <div class="livro-tabela-capa"></div>
+                      <div class="livro-tabela-info">
+                        <strong>O Pequeno Príncipe</strong>
+                        <span>Antoine de Saint-Exupéry</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Literatura Infantojuvenil</td>
+                  <td>6</td>
+                  <td><span class="badge badge-sucesso">Disponível</span></td>
+                  <td><button class="btn btn-secundario" style="padding: var(--esp-1) var(--esp-3);">✏️</button></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="livro-tabela">
+                      <div class="livro-tabela-capa"></div>
+                      <div class="livro-tabela-info">
+                        <strong>Harry Potter e a Pedra Filosofal</strong>
+                        <span>J.K. Rowling</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Fantasia</td>
+                  <td>3</td>
+                  <td><span class="badge badge-erro">Emprestado</span></td>
+                  <td><button class="btn btn-secundario" style="padding: var(--esp-1) var(--esp-3);">✏️</button></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="livro-tabela">
+                      <div class="livro-tabela-capa"></div>
+                      <div class="livro-tabela-info">
+                        <strong>A Revolução dos Bichos</strong>
+                        <span>George Orwell</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Ficção</td>
+                  <td>4</td>
+                  <td><span class="badge badge-sucesso">Disponível</span></td>
+                  <td><button class="btn btn-secundario" style="padding: var(--esp-1) var(--esp-3);">✏️</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Painel Lateral: Novo Livro -->
+        <aside class="painel-lateral">
+          <h2>📖 Novo livro</h2>
+          <div class="form-lateral">
+            <div class="campo">
+              <label>Título</label>
+              <input type="text" placeholder="Digite o título" />
+            </div>
+            <div class="campo">
+              <label>Autor</label>
+              <input type="text" placeholder="Nome do autor" />
+            </div>
+            <div class="campo">
+              <label>ISBN</label>
+              <input type="text" placeholder="Digite o ISBN" />
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--esp-3);">
+              <div class="campo">
+                <label>Ano</label>
+                <input type="text" placeholder="Ex: 2020" />
+              </div>
+              <div class="campo">
+                <label>Editora</label>
+                <input type="text" placeholder="Editora" />
+              </div>
+            </div>
+            <div class="campo">
+              <label>Categoria</label>
+              <select>
+                <option>Selecione uma categoria</option>
+              </select>
+            </div>
+            <div class="campo">
+              <label>Quantidade total</label>
+              <input type="number" placeholder="0" />
+            </div>
+            <div style="display: flex; gap: var(--esp-3); margin-top: var(--esp-2);">
+              <button class="btn btn-primario" style="flex: 1;">Salvar livro</button>
+              <button class="btn btn-secundario" style="flex: 1;">Cancelar</button>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
