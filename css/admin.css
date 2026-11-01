@@ -138,7 +138,7 @@
   flex: 1;
 }
 
-/* Área de formulário lateral (Novo Livro) - Vamos usar modal em breve, mas no protótipo ele fica visível */
+/* Área de formulário lateral (Novo Livro) */
 .painel-lateral {
   background-color: var(--cor-superficie);
   border: 1px solid var(--cor-borda);
@@ -162,30 +162,7 @@
   gap: var(--esp-3);
 }
 
-/* Ajustes para telas menores */
-@media (max-width: 1024px) {
-  .metricas-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .sidebar {
-    display: none; /* Em mobile, idealmente faria um menu hambúrguer, mas vamos esconder para simplificar */
-  }
-  .admin-conteudo {
-    margin-left: 0;
-  }
-  .metricas-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .doar-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* ---------- TELA DE USUÁRIOS (ADMIN) ---------- */
-/* Cards de métricas específicos (com fundo cinza em vez de branco) */
 .card-metrica-usuario {
   background-color: #F8FAFC;
   border: 1px solid var(--cor-borda);
@@ -325,14 +302,13 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(15, 23, 42, 0.5); /* Fundo escuro semi-transparente */
-  display: none; /* Escondido por padrão */
+  background-color: rgba(15, 23, 42, 0.5);
+  display: none;
   align-items: center;
   justify-content: center;
   z-index: 1000;
 }
 
-/* Classe que o JS vai adicionar para mostrar o modal */
 .modal-overlay.ativo {
   display: flex;
 }
@@ -434,7 +410,6 @@
   font-weight: 500;
 }
 
-/* Card de Empréstimo no Kanban */
 .card-kanban {
   background-color: var(--cor-superficie);
   border: 1px solid var(--cor-borda);
@@ -488,16 +463,6 @@
   background-color: #E2E8F0;
 }
 
-/* Responsividade do Kanban */
-@media (max-width: 1024px) {
-  .kanban-grid {
-    grid-template-columns: 1fr; /* Em telas menores, as colunas empilham */
-  }
-  .kanban-coluna {
-    min-height: auto;
-  }
-}
-
 /* ---------- TELA DE DOAÇÕES ---------- */
 .abas-filtro {
   display: flex;
@@ -517,6 +482,7 @@
   display: flex;
   align-items: center;
   gap: var(--esp-2);
+  cursor: pointer; /* Importante para os labels funcionarem como botões */
 }
 
 .aba-btn:hover {
@@ -538,6 +504,35 @@
 .aba-btn:not(.ativa) .contador {
   background-color: var(--cor-borda);
   color: var(--cor-texto);
+}
+
+/* CSS Tabs (Abas Funcionais) */
+.tabs-container input[type="radio"] {
+  display: none;
+}
+
+.conteudo-aba {
+  display: none;
+}
+
+#aba-pendentes:checked ~ .conteudo-aba.aba-pendentes,
+#aba-aprovadas:checked ~ .conteudo-aba.aba-aprovadas,
+#aba-recusadas:checked ~ .conteudo-aba.aba-recusadas {
+  display: block;
+}
+
+#aba-pendentes:checked ~ .abas-filtro label[for="aba-pendentes"],
+#aba-aprovadas:checked ~ .abas-filtro label[for="aba-aprovadas"],
+#aba-recusadas:checked ~ .abas-filtro label[for="aba-recusadas"] {
+  background-color: var(--cor-primaria);
+  color: #fff;
+}
+
+#aba-pendentes:checked ~ .abas-filtro label[for="aba-pendentes"] .contador,
+#aba-aprovadas:checked ~ .abas-filtro label[for="aba-aprovadas"] .contador,
+#aba-recusadas:checked ~ .abas-filtro label[for="aba-recusadas"] .contador {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
 }
 
 /* Grid de Doações */
@@ -601,38 +596,6 @@
   display: flex;
   gap: var(--esp-2);
   margin-top: auto;
-}
-
-/* ---------- CSS TABS (Abas Funcionais) ---------- */
-.tabs-container input[type="radio"] {
-  display: none; /* Esconde os botões de rádio */
-}
-
-.conteudo-aba {
-  display: none; /* Esconde todo o conteúdo por padrão */
-}
-
-/* Quando o radio de Pendentes estiver marcado, mostra o conteúdo de pendentes */
-#aba-pendentes:checked ~ .conteudo-aba.aba-pendentes,
-/* E o mesmo para as outras */
-#aba-aprovadas:checked ~ .conteudo-aba.aba-aprovadas,
-#aba-recusadas:checked ~ .conteudo-aba.aba-recusadas {
-  display: block;
-}
-
-/* Lógica para mudar a cor do botão da aba ativa */
-#aba-pendentes:checked ~ .abas-filtro label[for="aba-pendentes"],
-#aba-aprovadas:checked ~ .abas-filtro label[for="aba-aprovadas"],
-#aba-recusadas:checked ~ .abas-filtro label[for="aba-recusadas"] {
-  background-color: var(--cor-primaria);
-  color: #fff;
-}
-
-#aba-pendentes:checked ~ .abas-filtro label[for="aba-pendentes"] .contador,
-#aba-aprovadas:checked ~ .abas-filtro label[for="aba-aprovadas"] .contador,
-#aba-recusadas:checked ~ .abas-filtro label[for="aba-recusadas"] .contador {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: #fff;
 }
 
 /* ---------- TELA DE RELATÓRIOS ---------- */
@@ -763,7 +726,7 @@
   gap: var(--esp-2);
 }
 
-/* Ranking de livros (bolinha com número) */
+/* Ranking de livros */
 .ranking-numero {
   display: inline-flex;
   align-items: center;
@@ -777,8 +740,17 @@
   font-weight: 700;
 }
 
-/* Responsividade */
+/* ---------- RESPONSIVIDADE (TELAS MENORES) ---------- */
 @media (max-width: 1024px) {
+  .metricas-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .kanban-grid {
+    grid-template-columns: 1fr;
+  }
+  .kanban-coluna {
+    min-height: auto;
+  }
   .relatorios-layout {
     flex-direction: column;
   }
@@ -790,8 +762,67 @@
   }
   .menu-relatorios h2 { width: 100%; }
   .menu-relatorios button { width: auto; margin-bottom: 0; }
-  
   .filtros-relatorio {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-layout {
+    flex-direction: column;
+  }
+
+  /* Transforma a sidebar em um menu no topo */
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+    border-right: none;
+    border-bottom: 1px solid var(--cor-borda);
+  }
+
+  .sidebar-logo {
+    padding: var(--esp-3) var(--esp-4);
+    font-size: var(--tamanho-md);
+    text-align: center;
+  }
+
+  .sidebar-nav {
+    flex-direction: row;
+    overflow-x: auto;
+    padding: var(--esp-2) var(--esp-3);
+    gap: var(--esp-2);
+    white-space: nowrap;
+  }
+
+  .sidebar-link {
+    padding: var(--esp-2) var(--esp-3);
+    font-size: var(--tamanho-xs);
+    flex-shrink: 0;
+  }
+
+  .sidebar-link[style*="margin-top: auto"] {
+    margin-top: 0 !important;
+  }
+
+  .admin-conteudo {
+    margin-left: 0;
+    padding: var(--esp-4);
+  }
+
+  .metricas-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Empilha o painel lateral de detalhes e formulários no mobile */
+  .painel-lateral,
+  .painel-detalhes {
+    width: 100%;
+    margin-top: var(--esp-4);
+  }
+  
+  /* Ajuste do layout flex das telas de Acervo e Usuários no mobile */
+  .admin-conteudo > div[style*="display: flex"] {
+    flex-direction: column !important;
   }
 }
